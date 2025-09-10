@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DesignWave</title>
+   <link rel="stylesheet" href="static/styles.css">
+      <link rel="stylesheet" href="static/footer.css">
+            <link rel="stylesheet" href="static/how -to-work.css">
+      <link rel="stylesheet" href="static/features.css">
+
+ <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="static/feedback.css">
+
+   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* HOW WE WORK section styles */
+
+  </style>
+</head>
+<body>
+  <div class="grid-bg" aria-hidden="true">
+    <svg viewBox="0 0 160 90" preserveAspectRatio="none" fill="none" stroke="rgba(255 255 255 / 0.17)" stroke-width="0.35" style="width:100vw; height:100vh;">
+      <defs>
+        <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="scale(1)" >
+          <path d="M 10 0 L 0 0 0 10"></path>
+        </pattern>
+      </defs>
+      <rect width="160" height="90" fill="url(#grid)"/>
+    </svg>
+  </div>
+
+ <nav style="z-index:50; position:relative;">
+  <div class="logo" aria-label="DesignWave logo">
+    <span class="line2" id="brandname"></span>
+  </div>
+  <button id="nav-toggle" aria-label="Toggle navigation" class="md:hidden block text-white text-3xl focus:outline-none" style="background:none;border:none;position:absolute;right:1.5rem;top:1.2rem;z-index:60;">
+    &#9776;
+  </button>
+  <ul id="nav-menu" role="menubar" aria-label="Primary"
+    class="transition-all duration-300 ease-in-out
+      md:flex md:static md:flex-row md:gap-10 md:bg-transparent md:shadow-none md:opacity-100 md:visible
+      absolute left-0 top-32 w-full bg-black/95 shadow-lg flex-col gap-0
+      opacity-0 invisible z-50">
+    <li role="none"><a href="/" role="menuitem" tabindex="0" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0">Home</a></li>
+    <li role="none"><a href="#features" role="menuitem" tabindex="-1" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0">Features</a></li>
+    <li role="none"><a href="#working" role="menuitem" tabindex="-1" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0">Working</a></li>
+    <li role="none"><a href="/technology" role="menuitem" tabindex="-1" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0">Technology</a></li>
+    <li role="none"><a href="/team" role="menuitem" tabindex="-1" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0 items-center">Team</a></li>
+    <li role="none"><a href="/contact" role="menuitem" tabindex="-1" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0">Contact</a></li>
+     <!-- <li class="block md:hidden px-6 py-4"><a href="/contact"><button class="btn-contact w-full" aria-label="Contact us">CONTACT</button></a></li> -->
+  </ul>
+</nav>
+ <script>
+    // Simple mobile nav toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    navToggle.addEventListener('click', function() {
+      navMenu.classList.toggle('opacity-0');
+      navMenu.classList.toggle('invisible');
+      navMenu.classList.toggle('opacity-100');
+      navMenu.classList.toggle('visible');
+    });
+  </script>
+  <main>
+    <div class="mainbox">
+
+      <div class="b1"><h1 id="title">The Ultimate Online Credit Card Fraud Detection </h1>
+      <p><span id="subtitle"></span></p>
+    <a href="/form"><button class="btn-passes" aria-label="Get your passes">
+      Get Started
+    </button></a>
+    </div>
+      <div class="b2"> 
+        <img src="static/credit-c1.png" alt="Credit Card Image" class="credit-card-image" />
+      </div>
+
+    </div>
+  </main>
+  <div class="box2">
+
+    <div class="flex1">
+      <h1>Credit Card Fraud Detection</h1>
+      <p id="videodescription"></p>
+    </div>
+<div class="flex2">
+  <video autoplay loop muted playsinline>
+    <source src="../static/video/vid1.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
+</div>
+
+
+    <!-- Features Section -->
+    <div class="fea" id="features">
+<section class="feature-blocks">
+  <div class="feature-left">
+    <span class="feature-label">FEATURES</span>
+    <h2 class="feature-title">The Features of Our Fraud Detection System</h2>
+    <p class="feature-desc">
+      Our fraud detection system is equipped with a range of powerful features to ensure the highest level of security for your transactions.
+    </p>
+    <a href="/form"><button class="feature-btn">Start for free</button></a>
+  </div>
+  <div class="feature-right">
+    <div class="feature-card">
+      <div class="feature-icon"><img src="https://img.icons8.com/ios/50/00ffcc/bank-card-back-side.png" alt="Accounts" /></div>
+      <h3>Deep Learning Models</h3>
+      <p>DL models are used to analyze transaction patterns and detect anomalies.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><img src="https://img.icons8.com/ios/50/00ffcc/lock-2--v1.png" alt="Roles" /></div>
+      <h3>Data Privacy & Encryption</h3>
+      <p>Encrypt transaction data both in transit and at rest.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><img src="https://img.icons8.com/ios/50/00ffcc/bank-cards.png" alt="Company cards" /></div>
+      <h3>High Accuracy in Detection</h3>
+      <p>Our system achieves over 95% accuracy in detecting fraudulent transactions.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><img src="https://img.icons8.com/ios/50/00ffcc/shield.png" alt="Security" /></div>
+      <h3>Security</h3>
+      <p>Our system employs advanced security measures to protect your data.</p>
+    </div>
+  </div>
+</section>
+</div>
+
+
+ <!-- Deliver Breakthrough Results Section -->
+<section class="benefits-section">
+  <div class="benefits-header">
+    <span class="benefits-label">Benefits</span>
+    <h2 class="benefits-title">Deliver Breakthrough Results</h2>
+    <p class="benefits-desc">
+      Minimize risks, streamline resources, and drive business growth while protecting trusted customer relationships and ensuring secure transactions.
+    </p>
+  </div>
+  <div class="benefits-cards">
+    <div class="benefit-card">
+      <div class="benefit-icon pink">
+        <!-- Example icon (bar chart) -->
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><rect x="4" y="10" width="3" height="10" fill="#E754D5"/><rect x="10" y="6" width="3" height="14" fill="#E754D5"/><rect x="16" y="14" width="3" height="6" fill="#E754D5"/></svg>
+      </div>
+      <h3>Reduce Fraud Losses</h3>
+      <p>Proven fraud detection at scale</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon blue">
+        <!-- Example icon (pie chart) -->
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#00B2FF" stroke-width="2"/><path d="M12 2a10 10 0 0 1 10 10h-10V2z" fill="#00B2FF"/></svg>
+      </div>
+      <h3>Minimize False Positives</h3>
+      <p>Unmatched accuracy for fewer reviews</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon cyan">
+        <!-- Example icon (shield) -->
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M12 2l7 4v6c0 5-3.5 9.7-7 10-3.5-.3-7-5-7-10V6l7-4z" stroke="#00FFD0" stroke-width="2" fill="none"/><path d="M12 2v18" stroke="#00FFD0" stroke-width="2"/></svg>
+      </div>
+      <h3>Improve Operational Efficiency</h3>
+      <p>Automate tasks, enable faster resolutions</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon purple">
+        <!-- Example icon (signal) -->
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><rect x="6" y="16" width="3" height="4" fill="#B16DFF"/><rect x="11" y="12" width="3" height="8" fill="#B16DFF"/><rect x="16" y="8" width="3" height="12" fill="#B16DFF"/></svg>
+      </div>
+      <h3>Boost Revenue Growth</h3>
+      <p>Isolate fraud, remove friction, increase approvals</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- How the Model Works Section -->
+<div class="htw" id="working">
+      <h2 class="ti">HOW THE MODEL WORKS ?
+      </h2>
+  <canvas id="particleCanvas"></canvas>
+  <div class="container">
+    <h1>MODEL WORKING</h1>
+    <div class="steps-row">
+      <div class="step">
+        <div class="step-content">
+          <div class="step-number">01</div>
+          <img src="../static/input.png" alt="Search Icon">
+        </div>
+        <div class="step-text">INPUT<br>Input is Given from the user side</div>
+     
+      </div>
+      <div class="step">
+        <div class="step-content">
+          <div class="step-number">02</div>
+          <img src="../static/machine-learning.png" alt="Order Icon">
+        </div>
+        <div class="step-text">MODEL<br>Inputes are processed through the model</div>
+  
+      </div>
+      <div class="step">
+        <div class="step-content">
+          <div class="step-number">03</div>
+          <img src="../static/predictive-models.png" alt="Delivery Icon">
+        </div>
+        <div class="step-text">MODELS PREDICTION<br> based on the input model prediction is done</div>
+        
+      </div>
+      <div class="step">
+        <div class="step-content">
+          <div class="step-number">04</div>
+          <img src="../static/predictive.png" alt="Enjoy Icon">
+        </div>
+        <div class="step-text">OUTPUT<br>Final result is displayed to the user</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Feedback Section -->
+  <section class="container" aria-label="Customer testimonials section">
+    <div class="left">
+      <h1>What Customers say <br /> About Us</h1>
+      <p class="lead">Lorem ipsum dolor sit amet consectetur. Scele risque tincidunt nibh molestie nisi egestas nulla massa. Scelerisque ipsum sem sed nisi molestie tortor tincidunt.</p>
+      <div class="stats" role="list">
+        <div class="stat-item" role="listitem">
+          <strong>93k+</strong>
+          <small>Satisfied user</small>
+        </div>
+        <div class="stat-item" role="listitem">
+          <strong>4.9<span style="opacity:0.6;">/5</span></strong>
+          <small>Client Rating</small>
+        </div>
+        <div class="stat-item" role="listitem">
+          <strong>100k+</strong>
+          <small>App Download</small>
+        </div>
+      </div>
+    </div>
+    <div class="right" role="list">
+      <article class="testimonial-card purple" role="listitem" aria-label="Testimonial from John Smith">
+        <img src="https://i.pravatar.cc/72?img=15" alt="Portrait of John Smith" class="profile-pic" />
+        <div class="testimonial-text">
+          <div class="stars" aria-label="4 star rating">★★★★</div>
+          <p class="testimonial-name">John Smith</p>
+          <p class="testimonial-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+      </article>
+      <article class="testimonial-card dark-gradient" role="listitem" aria-label="Testimonial from William John">
+        <img src="https://i.pravatar.cc/72?img=32" alt="Portrait of William John" class="profile-pic" />
+        <div class="testimonial-text">
+          <div class="stars" aria-label="4 star rating">★★★★</div>
+          <p class="testimonial-name">William John</p>
+          <p class="testimonial-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+      </article>
+      <article class="testimonial-card pink-gradient" role="listitem" aria-label="Testimonial from Anna Williams">
+        <img src="https://i.pravatar.cc/72?img=19" alt="Portrait of Anna Williams" class="profile-pic" />
+        <div class="testimonial-text">
+          <div class="stars" aria-label="4 star rating">★★★★</div>
+          <p class="testimonial-name">Anna Williams</p>
+          <p class="testimonial-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+ 
+
+  <div class="f" id="reach-us">
+     <footer class="footer-container" role="contentinfo" aria-label="Footer with updates subscription and contact info">
+
+    <section class="subscribe-section" aria-labelledby="subscribe-title">
+      <h2 id="subscribe-title">Get Latest Updates</h2>
+      <form class="subscribe-form" aria-label="Subscribe to latest updates by email">
+        <input
+          type="email"
+          class="subscribe-input"
+          aria-label="Enter your email address"
+          placeholder="Enter Your Email"
+          required
+          name="email"
+        />
+        <button type="submit" class="subscribe-button" aria-label="Subscribe to newsletter">Subscribe</button>
+      </form>
+    </section>
+
+    <div class="divider" role="presentation"></div>
+
+    <section class="footer-main">
+      
+      <div class="footer-cols">
+        <div class="footer-col contact" aria-labelledby="contact-us-title">
+          <h4 id="contact-us-title">Contact US</h4>
+          <p id="address"><span id="footeraddress"></span></p>
+          <p>Need help? Call us</p>
+          <p aria-label="Phone number with country code">
+            <span class="phone-highlight" aria-hidden="true">
+              <span class="code">(+122)</span>  <span style="color:#cc9352;" id="footerphone"></span>
+            </span>
+          </p>
+          <p class="email"><span id="footeremail"></span></p>
+        </div>
+
+        <div class="footer-col download" aria-labelledby="download-app-title">
+          <h4 id="download-app-title">DOWNLOAD THE APP</h4>
+          <p>We suggest connecting to the apps you use for work</p>
+          </div>    
+
+<script>
+  // Particle animation for HOW WE WORK section
+  const canvas = document.getElementById('particleCanvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+
+    const particles = [];
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 1;
+        this.speedX = Math.random() * 0.5 - 0.25;
+        this.speedY = Math.random() * 0.5 - 0.25;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.size > 0.2) this.size -= 0.01;
+        if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+      }
+      draw() {
+        ctx.fillStyle = '#00ffcc';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function initParticles() {
+      particles.length = 0;
+      for (let i = 0; i < 100; i++) {
+        particles.push(new Particle());
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach((particle, index) => {
+        particle.update();
+        particle.draw();
+        if (particle.size <= 0.2) {
+          particles.splice(index, 1);
+          particles.push(new Particle());
+        }
+      });
+      requestAnimationFrame(animateParticles);
+    }
+
+    initParticles();
+    animateParticles();
+
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      initParticles();
+    });
+  }
+</script>
+
+    <script src="static/js/data.js"></script> <!-- This file has your data -->
+  <script src="static/js/scripts.js"></script> <!-- This file will set the data in HTML -->
+
+</body>
+</html>
+

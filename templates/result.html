@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="static/result.css">
+        <link rel="stylesheet" href="static/footer.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="static/js/data.js"></script> <!-- This file has your data -->
+    <script src="static/js/scripts.js"></script> <!-- This file will set the data in HTML -->
+
+
+  </head>
+<body>
+    <div class="grid-bg" aria-hidden="true">
+        <svg viewBox="0 0 160 90" preserveAspectRatio="none" fill="none" stroke="rgba(255 255 255 / 0.17)" stroke-width="0.35" style="width:100vw; height:100vh;">
+            <defs>
+                <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="scale(1)">
+                    <path d="M 10 0 L 0 0 0 10"></path>
+                </pattern>
+            </defs>
+            <rect width="160" height="90" fill="url(#grid)"/>
+        </svg>
+    </div>
+
+     <nav style="z-index:50; position:relative;">
+  <div class="logo" aria-label="DesignWave logo">
+    <span class="line2" id="brandname"></span>
+  </div>
+  <button id="nav-toggle" aria-label="Toggle navigation" class="md:hidden block text-white text-3xl focus:outline-none" style="background:none;border:none;position:absolute;right:1.5rem;top:1.2rem;z-index:60;">
+    &#9776;
+  </button>
+  <ul id="nav-menu" role="menubar" aria-label="Primary"
+    class="transition-all duration-300 ease-in-out
+      md:flex md:static md:flex-row md:gap-10 md:bg-transparent md:shadow-none md:opacity-100 md:visible
+      absolute left-0 top-32 w-full bg-black/95 shadow-lg flex-col gap-0
+      opacity-0 invisible z-50">
+    <li role="none"><a href="/" role="menuitem" tabindex="0" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0">Home</a></li>
+    <li role="none"><a href="/" role="menuitem" tabindex="-1" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0">Features</a></li>
+    <li role="none"><a href="/" role="menuitem" tabindex="-1" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0">Working</a></li>
+    <li role="none"><a href="/technology" role="menuitem" tabindex="-1" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0">Technology</a></li>
+    <li role="none"><a href="/team" role="menuitem" tabindex="-1" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0 items-center">Team</a></li>
+    <li role="none"><a href="/contact" role="menuitem" tabindex="-1" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0">Contact</a></li>
+     <!-- <li class="block md:hidden px-6 py-4"><a href="/contact"><button class="btn-contact w-full" aria-label="Contact us">CONTACT</button></a></li> -->
+  </ul>
+</nav>
+  <script>
+    // Simple mobile nav toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    navToggle.addEventListener('click', function() {
+      navMenu.classList.toggle('opacity-0');
+      navMenu.classList.toggle('invisible');
+      navMenu.classList.toggle('opacity-100');
+      navMenu.classList.toggle('visible');
+    });
+  </script>
+  
+    <!-- Loader Overlay -->
+    <div id="loader-overlay">
+        <svg id="mainSVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+            <defs>
+                <linearGradient id="aiGrad" x1="513.98" y1="290" x2="479.72" y2="320" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#000" stop-opacity="0" />
+                    <stop offset=".15" stop-color="#EF476F" />
+                    <stop offset=".4" stop-color="#359eee" />
+                    <stop offset=".6" stop-color="#03cea4" />
+                    <stop offset=".78" stop-color="#FFC43D" />
+                    <stop offset="1" stop-color="#000" stop-opacity="0" />
+                </linearGradient>
+            </defs>
+            {% for i in range(30) %}
+            <ellipse class="ell" cx="400" cy="300" rx="80" ry="80" />
+            {% endfor %}
+        </svg>
+    </div>
+
+    <div class="result-containerxx" style="display: none;">
+        <h2>Prediction Results</h2>
+        <div class="rc1">
+            <div class="model-boxx1">
+                <h3>Deep Convolutional Network Model</h3>
+                <p><strong>Model Score:</strong> {{ result1.score if result1 else 'N/A' }}</p>
+                <p><strong>Result:</strong> {{ result1.result if result1 else 'N/A' }}</p>
+                <p class="resultx">
+                    <strong>Risk Level:</strong> {{ result1.risk_level if result1 else 'N/A' }}
+                </p>
+            </div>
+            <div class="model-boxx2">
+                <h3>Feedforward Neural Networks Model</h3>
+                <p><strong>Model Score:</strong> {{ result2.score if result2 else 'N/A' }}</p>
+                <p><strong>Result:</strong> {{ result2.result if result2 else 'N/A' }}</p>
+                <p class="resultx">
+                    <strong>Risk Level:</strong> {{ result2.risk_level if result2 else 'N/A' }}
+                </p>
+            </div>
+        </div>
+        <div class="rc2">
+            <div class="total-risk-box">
+                <h3>Total Risk Assessment</h3>
+                <p class="resultxx"><strong>Total Risk:</strong> {{ total_risk }}</p>
+                <p><strong>Average Score: </strong>{{ avg_score }}%</p>
+            </div>
+            <a href="/form" style="display: inline-block; margin-top: 20px;">Try Again</a>
+        </div>
+    </div>
+
+  <div class="f" id="reach-us">
+     <footer class="footer-container" role="contentinfo" aria-label="Footer with updates subscription and contact info">
+
+    <section class="subscribe-section" aria-labelledby="subscribe-title">
+      <h2 id="subscribe-title">Get Latest Updates</h2>
+      <form class="subscribe-form" aria-label="Subscribe to latest updates by email">
+        <input
+          type="email"
+          class="subscribe-input"
+          aria-label="Enter your email address"
+          placeholder="Enter Your Email"
+          required
+          name="email"
+        />
+        <button type="submit" class="subscribe-button" aria-label="Subscribe to newsletter">Subscribe</button>
+      </form>
+    </section>
+
+    <div class="divider" role="presentation"></div>
+
+    <section class="footer-main">
+      
+      <div class="footer-cols">
+        <div class="footer-col contact" aria-labelledby="contact-us-title">
+          <h4 id="contact-us-title">Contact US</h4>
+          <p id="address"><span id="footeraddress"></span></p>
+          <p>Need help? Call us</p>
+          <p aria-label="Phone number with country code">
+            <span class="phone-highlight" aria-hidden="true">
+              <span class="code">(+122)</span>  <span style="color:#cc9352;" id="footerphone"></span>
+            </span>
+          </p>
+          <p class="email"><span id="footeremail"></span></p>
+        </div>
+
+        <div class="footer-col download" aria-labelledby="download-app-title">
+          <h4 id="download-app-title">DOWNLOAD THE APP</h4>
+          <p>We suggest connecting to the apps you use for work</p>
+          </div> 
+
+    <script>
+        // GSAP loader animation
+        gsap.config({trialWarn: false});
+        let select = s => document.querySelector(s),
+            toArray = s => gsap.utils.toArray(s),
+            mainSVG = select('#mainSVG'),
+            allEll = toArray('.ell'),
+            colorArr = ['#359EEE', '#FFC43D','#EF476F','#03CEA4'];
+
+        let colorInterp = gsap.utils.interpolate(colorArr);
+
+        gsap.set(mainSVG, {
+            visibility: 'visible'
+        });
+
+        function animate (el, count) {
+            let tl = gsap.timeline({
+                defaults: {
+                    ease: 'sine.inOut'
+                },
+                repeat: -1
+            });
+            gsap.set(el, {
+                opacity:1- count/(allEll.length),
+                stroke: colorInterp(count/(allEll.length))
+            });
+
+            tl.to(el, {
+                attr: {
+                    ry: `-=${count*2.3}`,
+                    rx: `+=${count*1.4}`
+                },
+                ease: 'sine.in'
+            })
+            .to(el, {
+                attr: {
+                    ry: `+=${count*2.3}`,
+                    rx: `-=${count*1.4}`
+                },
+                ease: 'sine'
+            })
+            .to(el, {
+                duration: 1,
+                rotation: -180,
+                transformOrigin: '50% 50%'
+            }, 0).timeScale(0.5);
+        }
+
+        allEll.forEach((c, i) => {
+            gsap.delayedCall(i/(allEll.length-1), animate, [c, i+1]);
+        });
+
+        gsap.to('#aiGrad', {
+            duration: 4,
+            delay: 0.75,
+            attr: {
+                x1: '-=300',
+                x2: '-=300'
+            },
+            scale: 1.2,
+            transformOrigin: '50% 50%',
+            repeat: -1,
+            ease: 'none'
+        });
+
+        gsap.to('#ai', {
+            duration: 1,
+            scale: 1.1,
+            transformOrigin: '50% 50%',
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut'
+        });
+
+        // Hide loader and show results after 1 second
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('loader-overlay').style.display = 'none';
+                document.querySelector('.result-containerxx').style.display = 'block';
+            }, 1000);
+        };
+
+        // Footer
+        document.getElementById("footeraddress").textContent = footer.address;
+        document.getElementById("footerphone").textContent = footer.phone;
+        document.getElementById("footeremail").textContent = footer.email;
+    </script>
+</body>
+</html>

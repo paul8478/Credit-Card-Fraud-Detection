@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="static/contact.css">
+   <link rel="stylesheet" href="static/styles.css">
+ <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts for Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <script src="static/js/data.js"></script> <!-- This file has your data -->
+  <script src="static/js/scripts.js"></script> 
+
+</head>
+<body>
+    <div class="grid-bg" aria-hidden="true">
+    <svg viewBox="0 0 160 90" preserveAspectRatio="none" fill="none" stroke="rgba(255 255 255 / 0.17)" stroke-width="0.35" style="width:100vw; height:100vh;">
+      <defs>
+        <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="scale(1)" >
+          <path d="M 10 0 L 0 0 0 10"></path>
+        </pattern>
+      </defs>
+      <rect width="160" height="90" fill="url(#grid)"/>
+    </svg>
+  </div>
+
+<nav style="z-index:50; position:relative;">
+  <div class="logo" aria-label="DesignWave logo">
+    <span class="line2" id="brandname"></span>
+
+  </div>
+  <button id="nav-toggle" aria-label="Toggle navigation" class="md:hidden block text-white text-3xl focus:outline-none" style="background:none;border:none;position:absolute;right:1.5rem;top:1.2rem;z-index:60;">
+    &#9776;
+  </button>
+  <ul id="nav-menu" role="menubar" aria-label="Primary"
+    class="transition-all duration-300 ease-in-out
+      md:flex md:static md:flex-row md:gap-10 md:bg-transparent md:shadow-none md:opacity-100 md:visible
+      absolute left-0 top-32 w-full bg-black/95 shadow-lg flex-col gap-0
+      opacity-0 invisible z-50">
+    <li role="none"><a href="/" role="menuitem" tabindex="0" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0">Home</a></li>
+    <li role="none"><a href="/" role="menuitem" tabindex="-1" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0">Features</a></li>
+    <li role="none"><a href="/" role="menuitem" tabindex="-1" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0">Working</a></li>
+    <li role="none"><a href="/technology" role="menuitem" tabindex="-1" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0">Technology</a></li>
+    <li role="none"><a href="/team" role="menuitem" tabindex="-1" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0 items-center">Team</a></li>
+    <li role="none"><a href="/contact" role="menuitem" tabindex="-1" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0">Contact</a></li>
+     <!-- <li class="block md:hidden px-6 py-4"><a href="/contact"><button class="btn-contact w-full" aria-label="Contact us">CONTACT</button></a></li> -->
+  </ul>
+</nav>
+  <script>
+    // Simple mobile nav toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    navToggle.addEventListener('click', function() {
+      navMenu.classList.toggle('opacity-0');
+      navMenu.classList.toggle('invisible');
+      navMenu.classList.toggle('opacity-100');
+      navMenu.classList.toggle('visible');
+    });
+  </script>
+
+  <div class="contact-overlay"></div>
+  <div class="contact-container">
+    <div class="contact-info">
+      <h2>Contact Us</h2>
+      <p id="contact-description"></p>
+      <div class="info-list">
+        <div class="info-item">
+          <span class="info-icon">
+            <!-- Address Icon SVG -->
+            <svg width="22" height="22" fill="none" stroke="#00bcd4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M12 21s-6-5.686-6-10A6 6 0 0112 3a6 6 0 016 6c0 4.314-6 10-6 10z"/>
+              <circle cx="12" cy="9" r="2.5"/>
+            </svg>
+          </span>
+          <span class="info-details">
+            <span class="info-title">Address</span>
+            <span class="info-text" id="contact-address"></span>
+          </span>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">
+            <!-- Phone Icon SVG -->
+            <svg width="22" height="22" fill="none" stroke="#00bcd4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M22 16.92V21a2 2 0 01-2.18 2A19.72 19.72 0 713 5.18 2 2 0 015 3h4.09a2 2 0 012 1.72c.13 1.13.37 2.23.72 3.28a2 2 0 01-.45 2.11l-1.27 1.27a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45c1.05.35 2.15.59 3.28.72A2 2 0 0122 16.92z"/>
+            </svg>
+          </span>
+          <span class="info-details">
+            <span class="info-title">Phone</span>
+            <span class="info-text" id="contact-phone"></span>
+          </span>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">
+            <!-- Email Icon SVG -->
+            <svg width="22" height="22" fill="none" stroke="#00bcd4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M22 6l-10 7L2 6"/>
+            </svg>
+          </span>
+          <span class="info-details">
+            <span class="info-title">Email</span>
+            <span class="info-text" id="contact-email"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form-box">
+      <h3>Send Message</h3>
+      <form method="post" action="/contact" class="contact-form" onsubmit="handleSubmit(event)">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" placeholder="Type your Message..." required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      
+      // Your form submission logic here
+      console.log('Form submitted without page refresh');
+      
+      // Optional: Show success message or handle form data
+      alert('Message sent successfully!');
+      
+      // Optional: Reset form
+      event.target.reset();
+    }
+
+
+
+      document.getElementById("contact-description").textContent = contact.contactdescription;
+    document.getElementById("contact-address").textContent = contact.contactAddress;
+    document.getElementById("contact-phone").textContent = contact.contactPhone;
+    document.getElementById("contact-email").textContent = contact.contactEmail;
+
+  </script>
+
+</body>
+</html>

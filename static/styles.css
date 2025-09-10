@@ -1,0 +1,735 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+    body {
+      margin: 0;
+      height: auto;
+      background: radial-gradient(circle at bottom,
+          rgba(102, 51, 153, 0.6) 0%,
+          #070707 50%,
+          #000 100%)
+        no-repeat;
+      font-family: "Montserrat", sans-serif;
+      color: white;
+      overflow-x: hidden;
+      background-color: black;
+    }
+
+    .grid-bg {
+      position: fixed;
+      inset: 0;
+      background: black;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .grid-bg svg {
+      width: 100vw;
+      height: 100vh;
+      display: block;
+      filter: brightness(0.5);
+    }
+
+    nav {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 5vw;
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+    .logo {
+      font-weight: 900;
+      letter-spacing: -0.12rem;
+      font-size: 1.5rem;
+      line-height: 1;
+      user-select: none;
+    }
+    .logo .line2 {
+      font-weight: 600;
+      margin-left: -0.15rem;
+      display: inline-block;
+      transform: translateX(-0.25rem);
+    }
+    nav ul {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-weight: bold;
+    }
+    nav ul li {
+      cursor: pointer;
+      user-select: none;
+    }
+    nav ul li:hover {
+      text-decoration: underline;
+    }
+    .btn-contact {
+      border: 2px solid white;
+      padding: 0.5rem 1.4rem;
+      border-radius: 0.4rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      transition: background-color 0.35s ease, color 0.35s ease;
+    }
+    .btn-contact:hover {
+      background: white;
+      color: black;
+      cursor: pointer;
+    }
+
+    main {
+      position: relative;
+      z-index: 5;
+      height: calc(140vh - 65px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 25px;
+      text-align: center;
+      user-select: none;
+    }
+
+    h1 {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 900;
+      font-size: 3.6rem;
+      line-height: 1.1;
+      margin: 0 0 0.3em;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    h1 strong {
+      font-weight: 900;
+    }
+
+    p.description {
+      max-width: 26ch;
+      font-weight: 400;
+      font-size: 1.1rem;
+      margin: 0 0 1.8em;
+      padding: 0 6px;
+      line-height: 1.5;
+      color: white;
+    }
+
+    .btn-passes {
+      background-color: #7c2aff;
+      padding: 0.8rem 1.8rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: 0.4rem;
+      border: none;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 12px #7c2aff88;
+    }
+
+    .btn-passes:hover {
+      background-color: #5f20d1;
+    }
+
+    /* The transparent glowing spheres */
+    .sphere {
+      position: absolute;
+      border-radius: 50%;
+      box-shadow: inset 0 0 50px 15px rgba(124, 42, 255, 0.8);
+      pointer-events: none;
+      filter: drop-shadow(0 5px 5px rgba(124, 42, 255, 0.4));
+      border: 1px solid rgba(255 255 255 / 0.25);
+      background: radial-gradient(
+        circle,
+        rgba(255 255 255 / 0.3) 30%,
+        rgba(255 255 255 / 0) 90%
+      );
+      backdrop-filter: blur(6px);
+    }
+
+    #sphere-topright {
+      width: 145px;
+      height: 145px;
+      top: 23vh;
+      right: 12vw;
+    }
+    #sphere-bottomleft {
+      width: 210px;
+      height: 210px;
+      bottom: 9vh;
+      left: 3vw;
+      filter: drop-shadow(0 10px 15px rgba(124, 42, 255, 0.8));
+    }
+    #sphere-bottomright {
+      width: 360px;
+      height: 360px;
+      bottom: 0;
+      right: 0;
+      opacity: 0.65;
+      filter: drop-shadow(0 14px 18px rgba(124, 42, 255, 0.75));
+    }
+
+    /* Social icons container right */
+    .social-icons {
+      position: fixed;
+      right: 1.66rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      z-index: 9;
+    }
+    .social-icons svg {
+      width: 22px;
+      height: 22px;
+      fill: transparent;
+      stroke: white;
+      stroke-width: 1.9;
+      cursor: pointer;
+      transition: fill 0.2s ease;
+    }
+    .social-icons svg:hover {
+      fill: white;
+    }
+
+    /* Vertical text on left side */
+    .side-text {
+      position: fixed;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%) rotate(-90deg);
+      font-weight: 400;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      user-select: none;
+      white-space: nowrap;
+      color: white;
+      z-index: 9;
+    }
+
+    /* Vertical arrow and line on right */
+    .right-indicator {
+      position: fixed;
+      right: 14px;
+      top: 54%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+      color: white;
+      user-select: none;
+      font-size: 13px;
+      z-index: 9;
+    }
+    .right-indicator svg {
+      width: 1.6rem;
+      height: 1.6rem;
+      stroke: white;
+      stroke-width: 2;
+      fill: none;
+    }
+    .right-indicator .line {
+      width: 2px;
+      height: 45px;
+      background: white;
+      opacity: 0.4;
+      border-radius: 1px;
+    }
+
+    @media (max-width: 720px) {
+      nav ul {
+        gap: 1.4rem;
+      }
+      nav ul li {
+        font-size: 0.95rem;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+      p.description {
+        max-width: 25ch;
+        font-size: 0.9rem;
+      }
+      .btn-passes {
+        font-size: 1rem;
+      }
+      .sphere {
+        display: none;
+      }
+      .side-text,
+      .right-indicator,
+      .social-icons {
+        display: none;
+      }
+    }
+.form-container, .result-container {
+    background: #fff;
+    padding: 25px;
+    max-width: 600px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #357ae8;
+}
+
+.model-box {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+
+
+
+
+.box2 {
+    height: auto;
+    width: 100%;
+    background: linear-gradient(180deg,black 0%,  #3D1E57 100%);;
+    position: relative;  /* This enables z-index and allows moving */
+    z-index: 2;
+    top: -20px;    
+    display: flex;      /* Moves the box 20px upward */
+    color: white;
+    padding: 40px;
+}
+
+.flex1{
+    height: auto;
+    width: 50%;
+    background-color: transparent;
+    padding: 25px;
+}
+.flex1 h1{
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+    color: white;
+}
+.flex1 p{
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #A8AAB1;
+    text-align: justify;
+    padding: 0;
+}
+.flex2 {
+  height: 500px;
+  width: 50%;
+  background-color: transparent;
+  padding: 10px;
+  overflow: hidden; /* ensures video doesn't overflow */
+}
+
+.flex2 video {
+  height: 100%;
+  width: 100%;
+  object-fit: scale-down; /* makes video fill area nicely */
+}
+
+
+
+
+.mainbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: transparent;
+    width: 100%;
+    padding: 60px;
+}
+
+.b1{
+  height:400px;
+  width: 50%;
+  background-color: transparent;
+  padding: 23px;
+}
+.b1 h1{
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+  font-size: 3.2rem;
+  text-align: left;
+
+}
+
+.b1 p{
+  color: white;
+  text-align: justify;
+  padding-top: 20px;
+  font-size: 1rem;
+}
+.b2{
+  height:600px;
+  width: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: flex-end;
+}
+
+.b2 img {
+  transition: transform 0.5s ease; /* Smooth zoom effect */
+}
+
+.b2 img:hover {
+  transform: scale(1.1); /* Zoom in 10% on hover */
+}
+
+
+.btn-passes{
+background: linear-gradient(90deg, #7a34ff, #ffa87f);
+      border: none;
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 0 2rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: filter 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      margin-top: 25px;
+}
+
+
+
+
+/*benifits section*/
+/* Deliver Breakthrough Results Section */
+.benefits-section {
+    background: linear-gradient(180deg, #050019 0%, #3D1E57 100%);
+  color: #fff;
+  padding: 60px 0 80px 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  height: 90vh;
+}
+
+.benefits-header {
+  margin-bottom: 40px;
+}
+
+.benefits-label {
+  color: #00ffd0;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.benefits-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #fff;
+  letter-spacing: -1px;
+}
+
+.benefits-desc {
+  color: #b0b3b8;
+  font-size: 1.15rem;
+  margin-bottom: 0;
+}
+
+.benefits-cards {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.benefit-card {
+background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.25) 0%, 
+    rgba(255, 255, 255, 0.1) 100%);
+backdrop-filter: blur(20px) saturate(200%);
+border: 1px solid rgba(255, 255, 255, 0.3);
+box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  border: 1.5px solid;
+  border-image: linear-gradient(90deg, #e754d5 0%, #00ffd0 100%);
+  border-image-slice: 1;
+  border-radius: px;
+  padding: 32px 28px 28px 28px;
+  width: 260px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+}
+
+.benefit-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 40px 0 rgba(0,0,0,0.18);
+}
+
+.benefit-icon {
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+}
+.benefit-icon.pink svg { }
+.benefit-icon.blue svg { }
+.benefit-icon.cyan svg { }
+.benefit-icon.purple svg { }
+
+.benefit-card h3 {
+  font-size: 1.18rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.benefit-card p {
+  color: #b0b3b8;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 900px) {
+  .mainbox,
+  .box2 {
+    flex-direction: column;
+    padding: 20px;
+    height: auto;
+  }
+  .b1, .b2, .flex1, .flex2 {
+    width: 100%;
+    padding: 10px;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  .b2 {
+    height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+  .b2 img, .flex2 video {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  .flex2 {
+    height: auto;
+    padding: 0;
+  }
+  .benefits-cards {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .benefit-card {
+    width: 90%;
+    min-width: 0;
+    padding: 20px 10px;
+  }
+  .benefits-section {
+    height: auto;
+    padding: 40px 0 40px 0;
+  }
+}
+
+/* Responsive Navbar */
+@media (max-width: 900px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 3vw;
+    font-size: 1rem;
+  }
+  .logo {
+    margin-bottom: 0.7rem;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    padding-left: 0;
+    margin-top: 0.5rem;
+  }
+  nav ul li {
+    width: 100%;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+  }
+  .btn-contact {
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    padding: 0.7rem 2vw;
+    font-size: 0.95rem;
+  }
+  .logo {
+    font-size: 1.1rem;
+  }
+  nav ul {
+    gap: 0.5rem;
+  }
+  .btn-contact {
+    padding: 0.4rem 1rem;
+    font-size: 0.95rem;
+  }
+  .form-container, .result-container {
+    padding: 12px;
+    max-width: 98vw;
+    border-radius: 7px;
+  }
+  .mainbox, .box2 {
+    padding: 8px;
+  }
+  .b1 h1, .flex1 h1, .benefits-title {
+    font-size: 1.3rem;
+    padding: 0;
+  }
+  .b1 p, .flex1 p, .benefits-desc, .benefit-card p {
+    font-size: 0.95rem;
+  }
+  .btn-passes {
+    font-size: 0.95rem;
+    height: 40px;
+    padding: 0 1rem;
+    margin-top: 15px;
+    margin:20px auto;
+  }
+  .benefits-section {
+    padding: 25px 0 30px 0;
+  }
+  .benefit-card {
+    padding: 14px 6px 14px 6px;
+  }
+}
+
+/* Add to your styles.css or team.css for dropdown effect */
+@media (min-width: 768px) {
+  #nav-toggle { display: none !important; }
+  #nav-menu {
+    display: flex !important;
+    position: static !important;
+    flex-direction: row !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    gap: 2.5rem !important;
+    width: auto !important;
+  }
+}
+@media (max-width: 767px) {
+  nav {
+    position: relative;
+  }
+  #nav-toggle {
+    display: block;
+  }
+  #nav-menu {
+    position: absolute !important;
+    top: 60px; /* Adjust to your navbar height */
+    left: 0;
+    width: 100vw;
+    background: rgba(0,0,0,0.97);
+    box-shadow: 0 4px 24px #0008;
+    z-index: 99;
+    transition: opacity 0.3s, visibility 0.3s;
+    opacity: 0;
+    visibility: hidden;
+    height: auto;
+    padding-top: 0;
+  }
+  #nav-menu.visible, #nav-menu.opacity-100 {
+    opacity: 1 !important;
+    visibility: visible !important;
+    background-color: #201842;
+    
+
+  }
+  #nav-menu.opacity-0, #nav-menu.invisible {
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  main{
+    height: fit-content;
+    margin-top: 30px;
+        margin-bottom: 30px;
+
+  }
+.b1{
+  height: max-content;
+}
+.b1 h1{
+  text-align: center;
+}
+.b1 p{
+  color: #A8AAB1;
+  text-align: center;
+  font-size: 15px;
+}
+
+.flex1{
+margin-top: 50px;
+}
+
+.flex1 h1{
+text-align: center;}
+
+.flex1 p{
+  color: #A8AAB1;
+}
+
+.container{
+  width: 100%;
+  padding: 20px;
+}
+}

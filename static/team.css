@@ -1,0 +1,118 @@
+/* Glowing border animations */
+@keyframes glow-blue {
+  0%, 100% { box-shadow: 0 0 24px 4px #22d3ee44; }
+  50% { box-shadow: 0 0 48px 8px #22d3ee99; }
+}
+@keyframes glow-pink {
+  0%, 100% { box-shadow: 0 0 24px 4px #e879f944; }
+  50% { box-shadow: 0 0 48px 8px #e879f999; }
+}
+@keyframes glow-green {
+  0%, 100% { box-shadow: 0 0 24px 4px #34d39944; }
+  50% { box-shadow: 0 0 48px 8px #34d39999; }
+}
+.animate-glow-blue { animation: glow-blue 2s infinite alternate; }
+.animate-glow-pink { animation: glow-pink 2s infinite alternate; }
+.animate-glow-green { animation: glow-green 2s infinite alternate; }
+
+/* Hologram nameplate effect */
+.hologram-name {
+  background: linear-gradient(90deg, #d80aa4 0%, #d80aa4 100%);
+  border-radius: 8px;
+  padding: 4px 16px;
+  box-shadow: 0 0 16px #00fff7aa, 0 0 32px #a5b4fc55;
+  margin-bottom: 8px;
+  filter: blur(0.2px) brightness(1.2);
+  opacity: 0.95;
+  color: black;
+}
+
+/* Sci-fi badge */
+.sci-fi-badge svg {
+  stroke-width: 2.5;
+}
+
+/* Optional: Hide overflow for animated borders */
+.sci-fi-card {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+/* Profile images */
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.w-32 {
+  width: 8rem;
+}
+
+.h-32 {
+  height: 8rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.border-4 {
+  border-width: 4px;
+}
+
+.border-cyan-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(6 182 212 / var(--tw-border-opacity));
+}
+
+.border-fuchsia-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(192 38 211 / var(--tw-border-opacity));
+}
+
+.border-emerald-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(20 184 166 / var(--tw-border-opacity));
+}
+
+.shadow-lg {
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px 0 rgb(0 0 0 / 0.05);
+  box-shadow: var(--tw-shadow);
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .w-32, .h-32 {
+    width: 5rem;
+    height: 5rem;
+  }
+  .mb-4 {
+    margin-bottom: 0.5rem;
+  }
+  .hologram-name {
+    font-size: 1rem;
+    padding: 2px 8px;
+  }
+  .sci-fi-card {
+    padding: 8px;
+  }
+  .rounded-full {
+    border-radius: 50%;
+  }
+  /* Add more overrides as needed for your layout */
+}

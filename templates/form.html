@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fraud Detection</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="static/form.css">
+        <link rel="stylesheet" href="static/styles.css">
+ <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+<script src="static/js/data.js"></script> <!-- This file has your data -->
+<script src="static/js/scripts.js"></script> 
+
+</head>
+<body>
+      <div class="grid-bg" aria-hidden="true">
+    <svg viewBox="0 0 160 90" preserveAspectRatio="none" fill="none" stroke="rgba(255 255 255 / 0.17)" stroke-width="0.35" style="width:100vw; height:100vh;">
+      <defs>
+        <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="scale(1)" >
+          <path d="M 10 0 L 0 0 0 10"></path>
+        </pattern>
+      </defs>
+      <rect width="160" height="90" fill="url(#grid)"/>
+    </svg>
+  </div>
+
+
+     <nav style="z-index:50; position:relative;">
+  <div class="logo" aria-label="DesignWave logo">
+    <span class="line2" id="brandname"></span>
+  </div>
+  <button id="nav-toggle" aria-label="Toggle navigation" class="md:hidden block text-white text-3xl focus:outline-none" style="background:none;border:none;position:absolute;right:1.5rem;top:1.2rem;z-index:60;">
+    &#9776;
+  </button>
+  <ul id="nav-menu" role="menubar" aria-label="Primary"
+    class="transition-all duration-300 ease-in-out
+      md:flex md:static md:flex-row md:gap-10 md:bg-transparent md:shadow-none md:opacity-100 md:visible
+      absolute left-0 top-32 w-full bg-black/95 shadow-lg flex-col gap-0
+      opacity-0 invisible z-50">
+    <li role="none"><a href="/" role="menuitem" tabindex="0" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0">Home</a></li>
+    <li role="none"><a href="/" role="menuitem" tabindex="-1" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0">Features</a></li>
+    <li role="none"><a href="/" role="menuitem" tabindex="-1" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0">Working</a></li>
+    <li role="none"><a href="/technology" role="menuitem" tabindex="-1" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0">Technology</a></li>
+    <li role="none"><a href="/team" role="menuitem" tabindex="-1" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0 items-center">Team</a></li>
+    <li role="none"><a href="/contact" role="menuitem" tabindex="-1" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0">Contact</a></li>
+     <!-- <li class="block md:hidden px-6 py-4"><a href="/contact"><button class="btn-contact w-full" aria-label="Contact us">CONTACT</button></a></li> -->
+  </ul>
+</nav>
+  <script>
+    // Simple mobile nav toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    navToggle.addEventListener('click', function() {
+      navMenu.classList.toggle('opacity-0');
+      navMenu.classList.toggle('invisible');
+      navMenu.classList.toggle('opacity-100');
+      navMenu.classList.toggle('visible');
+    });
+  </script>
+
+
+  <div class="form-body">
+    <div class="form-container">
+        <h2>Credit Card Fraud Detection</h2>
+        <form action="/predict" method="post">
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Hour of Day:</label>
+                    <input type="number" step="any" name="Hour_of_Day" required>
+                </div>
+                <div class="input-group">
+                    <label>Amount:</label>
+                    <input type="number" step="any" name="Amount" required>
+                </div>
+            </div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>V1:</label>
+                    <input type="number" step="any" name="V1" required>
+                </div>
+                <div class="input-group">
+                    <label>V2:</label>
+                    <input type="number" step="any" name="V2" required>
+                </div>
+            </div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>V3:</label>
+                    <input type="number" step="any" name="V3" required>
+                </div>
+                <div class="input-group">
+                    <label>V4:</label>
+                    <input type="number" step="any" name="V4" required>
+                </div>
+            </div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>V5:</label>
+                    <input type="number" step="any" name="V5" required>
+                </div>
+                <div class="input-group">
+                    <label>Location Distance:</label>
+                    <input type="number" step="any" name="Location_Distance" required>
+                </div>
+            </div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Transaction Frequency:</label>
+                    <input type="number" step="any" name="Transaction_Frequency" required>
+                </div>
+                <div class="input-group">
+                    <label>Merchant Type:</label>
+                    <select name="Merchant_Type">
+                        <option value="Online">Online</option>
+                        <option value="Retail">Retail</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Is International:</label>
+                    <select name="Is_International">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Device Type:</label>
+                    <select name="Device_Type">
+                        <option value="Mobile">Mobile</option>
+                        <option value="Desktop">Desktop</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="scifi-btn">Predict</button>
+        </form>
+    </div>
+
+  </div>
+    
+</body>
+</html>

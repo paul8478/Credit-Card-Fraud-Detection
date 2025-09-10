@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="static/team.css">
+   <link rel="stylesheet" href="static/styles.css">
+ <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts for Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<script src="static/js/data.js"></script> <!-- This file has your data -->
+<script src="static/js/scripts.js"></script>
+
+</head>
+<body>
+    <div class="grid-bg" aria-hidden="true">
+    <svg viewBox="0 0 160 90" preserveAspectRatio="none" fill="none" stroke="rgba(255 255 255 / 0.17)" stroke-width="0.35" style="width:100vw; height:100vh;">
+      <defs>
+        <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="scale(1)" >
+          <path d="M 10 0 L 0 0 0 10"></path>
+        </pattern>
+      </defs>
+      <rect width="160" height="90" fill="url(#grid)"/>
+    </svg>
+  </div>
+
+  <nav style="z-index:50; position:relative;">
+  <div class="logo" aria-label="DesignWave logo">
+        <span class="line2" id="brandname"></span>
+
+  </div>
+  <button id="nav-toggle" aria-label="Toggle navigation" class="md:hidden block text-white text-3xl focus:outline-none" style="background:none;border:none;position:absolute;right:1.5rem;top:1.2rem;z-index:60;">
+    &#9776;
+  </button>
+  <ul id="nav-menu" role="menubar" aria-label="Primary"
+    class="transition-all duration-300 ease-in-out
+      md:flex md:static md:flex-row md:gap-10 md:bg-transparent md:shadow-none md:opacity-100 md:visible
+      absolute left-0 top-32 w-full bg-black/95 shadow-lg flex-col gap-0
+      opacity-0 invisible z-50">
+    <li role="none"><a href="/" role="menuitem" tabindex="0" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0">Home</a></li>
+    <li role="none"><a href="/" role="menuitem" tabindex="-1" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0">Features</a></li>
+    <li role="none"><a href="/" role="menuitem" tabindex="-1" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0">Working</a></li>
+    <li role="none"><a href="/technology" role="menuitem" tabindex="-1" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0">Technology</a></li>
+    <li role="none"><a href="/team" role="menuitem" tabindex="-1" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0 items-center">Team</a></li>
+    <li role="none"><a href="/contact" role="menuitem" tabindex="-1" class="nav-link block px-6 py-4 md:inline md:px-0 md:py-0">Contact</a></li>
+     <!-- <li class="block md:hidden px-6 py-4"><a href="/contact"><button class="btn-contact w-full" aria-label="Contact us">CONTACT</button></a></li> -->
+  </ul>
+</nav>
+  <script>
+    // Simple mobile nav toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    navToggle.addEventListener('click', function() {
+      navMenu.classList.toggle('opacity-0');
+      navMenu.classList.toggle('invisible');
+      navMenu.classList.toggle('opacity-100');
+      navMenu.classList.toggle('visible');
+    });
+  </script>
+
+  <!-- Add heading here -->
+<h2 class="text-4xl font-bold text-center text-white mt-16 mb-8 tracking-widest drop-shadow-lg z-20 relative">Meet Our Team</h2>
+
+<!-- Sci-Fi Team Profile Cards -->
+<div class="flex flex-wrap justify-center items-center gap-8 mt-4 relative z-10">
+  <!-- Card 1 -->
+  <div class="relative group bg-gradient-to-br from-blue-900 to-indigo-800 rounded-xl shadow-2xl p-6 w-80 border border-blue-400/30 backdrop-blur-md sci-fi-card overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-cyan-400/40 hover:border-cyan-400/70">
+    <!-- Animated Glow Border -->
+    <div class="absolute -inset-1 rounded-xl pointer-events-none z-10 animate-glow-blue"></div>
+    <div class="flex flex-col items-center relative z-20">
+      <img src="https://robohash.org/alpha?set=set3" alt="Commander Nova" class="w-32 h-32 rounded-full border-4 border-cyan-400 shadow-lg mb-4 animate-pulse">
+      <!-- Hologram Nameplate -->
+      <div class="hologram-name mb-2">
+        <h3 class="text-white text-xl font-bold font-orbitron tracking-widest" id="name1"></h3>
+      </div>
+      <span class="sci-fi-badge bg-cyan-700/60 text-cyan-200 px-2 py-1 rounded-full text-xs mb-2 flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v20m10-10H2"></path></svg>
+<span id="role1"></span>
+      </span>
+      <p class="text-blue-100 text-sm mt-2 mb-4 text-center font-mono"><span id="college1"></span><br><span class="text-cyan-400" id="mail1"></span></p>
+      <p class="text-blue-200 text-xs text-center" id="desc1"></p>
+    </div>
+  </div>
+  <!-- Card 2 -->
+  <div class="relative group bg-gradient-to-br from-purple-900 to-fuchsia-800 rounded-xl shadow-2xl p-6 w-80 border border-fuchsia-400/30 backdrop-blur-md sci-fi-card overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-fuchsia-400/40 hover:border-fuchsia-400/70">
+    <div class="absolute -inset-1 rounded-xl pointer-events-none z-10 animate-glow-pink"></div>
+    <div class="flex flex-col items-center relative z-20">
+      <img src="https://robohash.org/beta?set=set3" alt="Dr. Vega" class="w-32 h-32 rounded-full border-4 border-fuchsia-400 shadow-lg mb-4 animate-pulse">
+      <div class="hologram-name mb-2">
+        <h3 class="text-white text-xl font-bold font-orbitron tracking-widest" id="name2"></h3>
+      </div>
+      <span class="sci-fi-badge bg-fuchsia-700/60 text-fuchsia-200 px-2 py-1 rounded-full text-xs mb-2 flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle></svg>
+       ,<span id="role2"></span>
+      </span>
+      <p class="text-fuchsia-100 text-sm mt-2 mb-4 text-center font-mono"><span id="college2"></span><br><span class="text-fuchsia-400" id="mail2"></span></p>
+      <p class="text-fuchsia-200 text-xs text-center" id="desc2"></p>
+    </div>
+  </div>
+  <!-- Card 3 -->
+  <div class="relative group bg-gradient-to-br from-teal-900 to-emerald-800 rounded-xl shadow-2xl p-6 w-80 border border-emerald-400/30 backdrop-blur-md sci-fi-card overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-emerald-400/40 hover:border-emerald-400/70">
+    <div class="absolute -inset-1 rounded-xl pointer-events-none z-10 animate-glow-green"></div>
+    <div class="flex flex-col items-center relative z-20">
+      <img src="https://robohash.org/gamma?set=set3" alt="Lieutenant Orion" class="w-32 h-32 rounded-full border-4 border-emerald-400 shadow-lg mb-4 animate-pulse">
+      <div class="hologram-name mb-2">
+        <h3 class="text-white text-xl font-bold font-orbitron tracking-widest" id="name3"></h3>
+      </div>
+      <span class="sci-fi-badge bg-emerald-700/60 text-emerald-200 px-2 py-1 rounded-full text-xs mb-2 flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"></rect></svg>
+        <span id="role3"></span>
+      </span>
+      <p class="text-emerald-100 text-sm mt-2 mb-4 text-center font-mono"><span id="college3"></span><br><span class="text-emerald-400" id="mail3"></span></p>
+      <p class="text-emerald-200 text-xs text-center" id="desc3"></p>
+    </div>
+  </div>
+</div>
+
+<!-- Animated floating particles background -->
+<div class="absolute inset-0 pointer-events-none z-0">
+  <canvas id="sciFiParticles" class="w-full h-full"></canvas>
+</div>
+
+<script>
+  // Team Page
+    document.getElementById("name1").textContent = team.name1;
+    document.getElementById("role1").textContent = team.role1;
+    document.getElementById("college1").textContent = team.college1;
+    document.getElementById("mail1").textContent = team.mail1;
+    document.getElementById("desc1").textContent = team.desc1;
+
+    document.getElementById("name2").textContent = team.name2;
+    document.getElementById("role2").textContent = team.role2;
+    document.getElementById("college2").textContent = team.college2;
+    document.getElementById("mail2").textContent = team.mail2;
+    document.getElementById("desc2").textContent = team.desc2;
+
+    document.getElementById("name3").textContent = team.name3;
+    document.getElementById("role3").textContent = team.role3;
+    document.getElementById("college3").textContent = team.college3;
+    document.getElementById("mail3").textContent = team.mail3;
+    document.getElementById("desc3").textContent = team.desc3;
+
+</script>
+</body>
+</html>

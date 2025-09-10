@@ -1,0 +1,120 @@
+/* Feature Blocks Section */
+.fea{
+    height: auto;
+    width: 100%;
+}
+.feature-blocks {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  background: #181b23;
+  border-radius: 24px;
+  padding: 60px 40px;
+  margin: 60px auto;
+  max-width: 1200px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+.feature-left {
+  flex: 1 1 320px;
+  max-width: 350px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+.feature-label {
+  color: #00ffcc;
+  font-size: 0.95em;
+  letter-spacing: 2px;
+  font-family: 'Roboto Mono', monospace;
+  margin-bottom: 18px;
+  display: block;
+}
+.feature-title {
+  font-size: 2.2em;
+  font-weight: 700;
+  margin: 0 0 18px 0;
+  line-height: 1.1;
+}
+.feature-desc {
+  color: #b0b6c3;
+  font-size: 1.1em;
+  margin-bottom: 32px;
+}
+.feature-btn {
+  background: linear-gradient(90deg, #00ffcc 0%, #5f5fff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 12px 32px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 16px rgba(0,255,204,0.08);
+  transition: background 0.2s;
+}
+.feature-btn:hover {
+  background: linear-gradient(90deg, #5f5fff 0%, #00ffcc 100%);
+}
+.feature-right {
+  flex: 2 1 500px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+.feature-card {
+  background: #232634;
+  border-radius: 18px;
+  padding: 28px 22px 22px 22px;
+  color: #fff;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 180px;
+  min-height: 140px;
+  transition: transform 0.18s, box-shadow 0.18s;
+  position: relative;
+}
+.feature-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(0,255,204,0.10);
+}
+.feature-icon {
+  margin-bottom: 18px;
+}
+.feature-icon img {
+  width: 36px;
+  height: 36px;
+  filter: drop-shadow(0 2px 8px #00ffcc44);
+}
+.feature-card h3 {
+  font-size: 1.15em;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: #fff;
+}
+.feature-card p {
+  color: #b0b6c3;
+  font-size: 0.98em;
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .feature-blocks {
+    flex-direction: column;
+    padding: 32px 10px;
+    gap: 32px;
+  }
+  .feature-right {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .feature-left {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+}
